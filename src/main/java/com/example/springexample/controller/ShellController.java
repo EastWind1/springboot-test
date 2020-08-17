@@ -49,13 +49,6 @@ public class ShellController {
     }
     @ShellMethod("dto")
     public void getDto() {
-        String sql = "select id, amount from a";
-        Query query = entityManager.createNativeQuery(sql);
-        query.unwrap(NativeQuery.class).setResultTransformer(Transformers.aliasToBean(E.class));
-        List<E> result = query.getResultList();
-        for (E e:
-             result) {
-            System.out.println(e.getAmount());
-        }
+
     }
 }
